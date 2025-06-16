@@ -39,7 +39,7 @@ export default function CodeBlock(props: {
         style={twilight}
         showLineNumbers={true}
       >
-        {props.codePath && getCodeByPath(props.codePath, props.lineFrom, props.lineTo)}
+        {props.codePath ? getCodeByPath(props.codePath, props.lineFrom, props.lineTo) : ''}
       </SyntaxHighlighter>
       {props.caption && <div className="text-center text-md text-gray-500 mt-2 mb-2">{props.caption}</div>}
     </>
