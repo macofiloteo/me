@@ -1,9 +1,6 @@
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Next.js on GitHub Pages',
-  description: 'Deploy your static Next.js site to GitHub Pages.',
-};
+import React from 'react';
+import "./global.css";
+import { NavigationBar } from '@components';
 
 export default function RootLayout({
   children,
@@ -11,8 +8,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html className="dark" lang="en">
+      <body className="font-body bg-white dark:bg-black text-black dark:text-zinc-300">
+        <div className="flex flex-col h-screen">
+          <NavigationBar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <footer className="py-4 text-center">
+            Copyright &copy; 2024 spacebin. All rights reserved.
+          </footer>
+        </div>
+      </body>
     </html>
   );
 }
