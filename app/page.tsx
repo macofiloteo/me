@@ -5,7 +5,7 @@ import { useVisitorTracker } from "@hooks";
 import mypic from "@assets/mypic.jpg";
 import postsMetadataJson from "./posts/posts-metadata.json";
 
-export default async function Home() {
+export default function Home() {
   useVisitorTracker();
   const latestPosts = postsMetadataJson.sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();

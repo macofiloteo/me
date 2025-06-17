@@ -41,7 +41,7 @@ export default function CodeBlock(props: {
       >
         {props.codePath ? getCodeByPath(props.codePath, props.lineFrom, props.lineTo) : ''}
       </SyntaxHighlighter>
-      {props.caption && <div className="text-center text-md text-gray-500 mt-2 mb-2">{props.caption}</div>}
+      {props.caption && <div className="text-center text-md text-gray-500 mt-1 mb-2">{props.caption}</div>}
     </>
   )
 };
