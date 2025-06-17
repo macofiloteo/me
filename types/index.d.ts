@@ -1,7 +1,7 @@
 interface PostMetadataType {
   title: string;
   description: string;
-  date: Date;
+  date: string;
   tags: string[];
   route: string;
 }

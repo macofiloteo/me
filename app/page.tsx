@@ -1,10 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import mypic from "@assets/mypic.jpg";
-import * as helper from "./posts/helper";
+import postsMetadataJson from "./posts/posts-metadata.json";
 
 export default async function Home() {
-  const latestPosts = await helper.getLatestPosts(5);
+  const latestPosts = postsMetadataJson.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  }).slice(0, 5);
   return (
     <div className="flex gap-10 place-content-center mt-20">
       <div>
@@ -19,7 +21,7 @@ export default async function Home() {
             {latestPosts.map((post, index) => (
               <li key={index} className="mb-2">
                 <Link href={post.route}>
-                  <span className="mr-2 bg-gray-700 text-xs rounded-full pr-2 pl-2 pt-1 pb-1">{post.date.toLocaleDateString('en-GB')}</span>
+                  <span className="mr-2 bg-gray-700 text-xs rounded-full pr-2 pl-2 pt-1 pb-1">{post.date}</span>
                   <span>{post.title}</span>
                 </Link>
               </li>

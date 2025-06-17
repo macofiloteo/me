@@ -13,7 +13,7 @@ export default function Post() {
       <div className="mt-6 text-xl leading-10">
         <h1 className="text-4xl mb-1">{CurrentPostMeta.title}</h1>
         <h3 className="text-gray-400 mb-4">
-          {CurrentPostMeta.date.toLocaleDateString('en-us', { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' })}
+          {(new Date(CurrentPostMeta.date)).toLocaleDateString('en-us', { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' })}
         </h3>
         <p>
           I was using Google Chrome for web development purposes and it suddenly stop responding. As usual, I opened my task manager to close that process. While I was searching for chrome.exe, these questions popped into my mind: How does a malware hide itself from the Task Manager? Is this how game hacks evade from anti-cheat software? "I asked these questions probably because I just started reading Practical Malware Analysis! My mind was still in the context of Malware. My guess was that a Window API function is responsible for listing all processes in a system. That way, the function can be used in different applications such as the Task Manager. I open Task Manager on Ghidra to see its imports table. </p>
